@@ -53,22 +53,41 @@ if current_tab == "How it Works":
         respond accordingly.
 
         **How to Use:**
-        1. Enter your message in the chat input on the main tab.
+        1. Enter your message in the chat input on the Chat tab.
         2. DataDrishti will respond with information or execute SQL queries if applicable.
         3. The assistant can generate plots based on the data, like if asked to make pie chart it will make one
 
-        **Interact with Data:**
+        **Query and Graph Generation:**
         - If DataDrishti detects a SQL query in the response, it will execute the query and display the results.
-        - Plots are generated based on the data, providing visual insights.
-
-        **Graph Generation:**
         - Specify graph generation is automatic, to specify a type mention it in query message only
         - DataDrishti uses the data to generate plots and provides recommendations for improving metrics.
+
+        **OpenAPI key**
+        - Use this to get your key - https://platform.openai.com/api-keys 
+
+        **Table Supported:**
+        - Table - 1
+            - Db - `SNOWFLAKE_HACKATHON_DB`,
+            - Schema - `PUBLIC`,
+            - Table - `HEALTHDATA`
+            - Description - `Health data of Indian states with different metrics`
+        - Table - 2
+            - Db - `SNOWFLAKE_HACKATHON_DB`,
+            - Schema - `PUBLIC`,
+            - Table - `DISTRICTWISEHEALTHDATA`
+            - Description - `District wise health data of India`
+        - Table - 3
+            - Db - `INDIA_ECONOMIC_MONITOR`,
+            - Schema - `ECONOMY`,
+            - Table - `IDH_DATA`
+            - Description - `Economic data of Indian states with different metrics`
+
+
 
         """
     )
 
-    st.video('https://youtu.be/z1Cg5LsKw2A?si=vq4l_JfdlAuuHQZK', format="video/mp4")
+    # st.video('https://youtu.be/z1Cg5LsKw2A?si=vq4l_JfdlAuuHQZK', format="video/mp4")
 
 
 #PART 2 : Chat Tab, the magic 

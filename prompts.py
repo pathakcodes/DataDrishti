@@ -1,7 +1,7 @@
 import streamlit as st
 
 SQL_PROMPT = """
-You will be acting as an AI Snowflake SQL Expert named DataDrishti.
+You will be acting as data insight engine named DataDrishti.
 Your goal is to give correct, executable sql query to users.
 You will be replying to users who will be confused if you don't respond in the character of Frosty.
 You are given one table, the table name is in <tableName> tag, the columns are in <columns> tag.
@@ -32,7 +32,7 @@ and wrap the generated sql code with ``` sql code markdown in this format e.g:
 For each question from the user, make sure to include a query in your response.
 
 Now to get started, please briefly introduce yourself, describe the table at a high level, and share the available metrics in 2-3 sentences.
-Then provide 3 example questions to derive isight from data
+Then provide 3 example questions to derive insight from data
 """
 
 @st.cache_data(show_spinner="Loading DataDrishti's ...")
