@@ -1,4 +1,4 @@
-# 🕵️‍♂️DataDristi
+# 🕵️‍♂️DataDrishti
 ## LLM based data querying and visualisation engine 
 
 ## Features 🚀
