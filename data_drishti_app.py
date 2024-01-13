@@ -5,6 +5,7 @@ import pandas as pd
 import numpy as np
 from chat2plot import chat2plot
 from prompts import get_start_prompt
+import os
 
 
 st.title("🕵️‍♂️DataDristi")
@@ -33,6 +34,7 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 # Button to trigger the function invocation
 if st.sidebar.button("Start Exploring table"):
     client = OpenAI(api_key=OPENAI_API_KEY)
+    os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
     QUALIFIED_TABLE_NAME = f"{DB}.{TABLE_SCHEMA}.{TABLE}"
     METADATA_QUERY = f"SELECT COLUMN_NAME FROM {DB}.INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = '{TABLE_SCHEMA}' AND TABLE_NAME = '{TABLE}';"
     st.session_state.messages = [{"role": "system", "content": get_start_prompt(QUALIFIED_TABLE_NAME, TABLE_DESCRIPTION, METADATA_QUERY)}]
