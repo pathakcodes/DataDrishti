@@ -8,7 +8,7 @@ from prompts import get_start_prompt
 import os
 
 
-st.title("🕵️‍♂️DataDristi")
+st.title("🕵️‍♂️DataDrishti")
 
 # Create a sidebar with navigation links
 st.sidebar.title("🕵️‍♂️DataDrishti")
