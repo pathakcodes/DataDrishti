@@ -24,9 +24,9 @@ author_github_url = "https://github.com/pathakcodes"  # Replace with the actual 
 
 # Get user input using a text input widget in the sidebar
 OPENAI_API_KEY = st.sidebar.text_input("OpenAPI Key", value = st.secrets.OPENAI_API_KEY, type="password")
-DB = st.sidebar.text_input("Database Name", value = "FROSTY_SAMPLE")
-TABLE_SCHEMA = st.sidebar.text_input("Table Schema", value = "CYBERSYN_FINANCIAL")
-TABLE = st.sidebar.text_input("Table Name", value = "HEALTHDATANEW")
+DB = st.sidebar.text_input("Database Name", value = "SNOWFLAKE_HACKATHON_DB")
+TABLE_SCHEMA = st.sidebar.text_input("Table Schema", value = "PUBLIC")
+TABLE = st.sidebar.text_input("Table Name", value = "HEALTHDATA")
 TABLE_DESCRIPTION = st.sidebar.text_input("Table Name", value = "This table has various metrics for health data of India.")
 client = OpenAI(api_key=OPENAI_API_KEY)
 
