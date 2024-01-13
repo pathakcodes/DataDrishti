@@ -109,7 +109,7 @@ elif current_tab == "Chat":
                     else:
                         st.dataframe(message["results"])
                 if "graph" in message:
-                    st.plotly_chart(message["graph2"])
+                    st.plotly_chart(message["graph"])
 
         # If the last message is not from the assistant, generate a new response
         if st.session_state.messages[-1]["role"] != "assistant":
@@ -137,13 +137,17 @@ elif current_tab == "Chat":
                         st.write("DataFrame is empty")
                     else:
                         st.dataframe(message["results"])
+                        try: 
+                            c2p = chat2plot(message["results"])
 
-                        c2p = chat2plot(message["results"])
-
-                        result = c2p(st.session_state.messages[-1]["content"] + "description should be one liner, also add a recommendation to improve a metric seeing data")
-                        st.write(result.explanation)
-                        st.plotly_chart(result.figure)
-                        message["graph"] = result.figure
+                            result = c2p(st.session_state.messages[-1]["content"] + "description should be one liner, also add a recommendation to improve a metric seeing data")
+                            st.write(result.explanation)
+                            st.plotly_chart(result.figure)
+                            message["graph"] = result.figure
+                        except Exception as e:
+                            print("skipped graph")
+                        finally:
+                            print("skipped graph")
 
 
                 st.session_state.messages.append(message)
