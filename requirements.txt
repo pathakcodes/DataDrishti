@@ -81,13 +81,6 @@ lark-parser==0.7.8
 markdown-it-py 
 MarkupSafe 
 marshmallow==3.20.2
-matplotlib==3.8.2
-matplotlib-inline 
-mdurl 
-mistune 
-mkl-fft 
-mkl-random 
-mkl-service==2.4.0
 multidict==6.0.4
 mypy-extensions==1.0.0
 nbclient 
