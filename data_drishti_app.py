@@ -129,25 +129,32 @@ elif current_tab == "Chat":
                 # Parse the response for a SQL query and execute if available
                 sql_match = re.search(r"```sql\n(.*)\n```", response, re.DOTALL)
                 if sql_match:
-                    sql = sql_match.group(1)
-                    conn = st.connection("snowflake")
-                    
-                    message["results"] = conn.query(sql)
-                    if message["results"].empty:
-                        st.write("DataFrame is empty")
-                    else:
-                        st.dataframe(message["results"])
-                        try: 
-                            c2p = chat2plot(message["results"])
-
-                            result = c2p(st.session_state.messages[-1]["content"] + "description should be one liner, also add a recommendation to improve a metric seeing data")
-                            st.write(result.explanation)
-                            st.plotly_chart(result.figure)
-                            message["graph"] = result.figure
-                        except Exception as e:
-                            print("skipped graph")
-                        finally:
-                            print("skipped graph")
+                    message["results"] = []
+                    try: 
+                        sql = sql_match.group(1)
+                        conn = st.connection("snowflake")
+                        message["results"] = conn.query(sql)
 
 
-                st.session_state.messages.append(message)
+                        if message["results"].empty:
+                            st.write("DataFrame is empty")
+                        else:
+                            st.dataframe(message["results"])
+                            try: 
+                                c2p = chat2plot(message["results"])
+
+                                result = c2p(st.session_state.messages[-1]["content"] + "description should be one liner, also add a recommendation to improve a metric seeing data")
+                                st.write(result.explanation)
+                                st.plotly_chart(result.figure)
+                                message["graph"] = result.figure
+                            except Exception as e:
+                                st.write(f"Plot generation not possible due to  {str(e)}")
+                            finally:
+                                print("skipped graph")
+
+                    except Exception as e:
+                        st.write(f"Query has issue {str(e)}")
+                    finally:
+                            print("skipped query")
+
+        st.session_state.messages.append(message)
