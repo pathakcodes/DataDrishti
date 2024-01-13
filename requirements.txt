@@ -21,7 +21,7 @@ cachetools
 certifi 
 cffi 
 charset-normalizer 
-chat2plot==0.0.11
+chat2plot==0.0.10
 click 
 cloudpickle 
 comm 
