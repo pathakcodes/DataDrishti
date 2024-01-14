@@ -10,8 +10,8 @@
 ## Demo 💻
 Live @ https://datadrishti.streamlit.app/
 
-<img width="1440" alt="image" src="https://github.com/pathakcodes/DataDrishti/assets/31039145/ca962bda-ffea-43b2-845d-df963f90cca5">
 
+![screencapture-datadrishti-streamlit-app-2024-01-14-15_27_59](https://github.com/pathakcodes/DataDrishti/assets/31039145/25c27cc8-4374-4207-a229-6a2ee735baec)
 
 ----------
 Made with ❤️ by [@pathakcodes](https://github.com/pathakcodes) at ❄️Snowflake: Data for Good Hackathon, Jan 2024
