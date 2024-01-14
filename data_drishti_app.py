@@ -131,7 +131,6 @@ elif current_tab == "Chat":
                 # Parse the response for a SQL query and execute if available
                 sql_match = re.search(r"```sql\n(.*)\n```", response, re.DOTALL)
                 if sql_match:
-                    message["results"] = []
                     try: 
                         sql = sql_match.group(1)
                         conn = st.connection("snowflake")
