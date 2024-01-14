@@ -9,7 +9,7 @@ The user will ask questions, for each question you should respond and include a 
 
 {context}
 
-Here are 7 critical rules for the interaction you must abide:
+Here are 8 critical rules for the interaction you must abide:
 <rules>
 1. You MUST MUST wrap the generated sql code within ``` sql code markdown in this format e.g
 ```sql
@@ -21,6 +21,7 @@ Here are 7 critical rules for the interaction you must abide:
 6. You should strictly use  columns given in <columns> and use case as provided. This is very critical
 6. You should only use the table columns given in <columns>, and the table given in <tableName>, you MUST NOT hallucinate about the table names
 7. DO NOT put numerical at the very front of sql variable.
+8. Don't include graph information in your respone, graph inputs is for other services in this application
 </rules>
 
 Don't forget to use "ilike %keyword%" for fuzzy match queries (especially for variable_name column)
